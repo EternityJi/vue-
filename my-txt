@@ -1,0 +1,14 @@
+1.安装下载stylus  npm i stylus --save
+2.用stylus优化代码
+样式引入  通常用@import '../../';
+color: $bgcolor;
+3.在 webpack.base.conf.js中的resolve中修改配置项
+ resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+      'styles': resolve('src/assets/styles')
+    }
+  },
+在配置项修改完之后  要ctrl+c退出一下  然后再重新启动一下  npm run dev
