@@ -2,11 +2,10 @@
   <div class="wraper">
     <swiper :options="swiperOption">
       <!-- slides -->
-      <swiper-slide><img class="Swiperimg"
-             src="//img1.qunarzz.com/vc/f5/10/9c/b647d3ee724a720ce0fa6101f0.jpg"></swiper-slide>
-      <swiper-slide><img class="Swiperimg"
-             src="//img1.qunarzz.com/vc/30/e6/6c/7236d07f50947d523bcdeadae8.jpg"></swiper-slide>
-      <swiper-slide><img src=""></swiper-slide>
+      <swiper-slide v-for="item of swiperList"
+                    :key="item.id"><img class="Swiperimg"
+                    :src="item.imgurl"/>
+      </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination"
            slot="pagination"></div>
@@ -19,8 +18,16 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination'
-      }
+        pagination: '.swiper-pagination',
+        loop: true
+      },
+      swiperList: [{
+        id: '0001',
+        imgurl: '//img1.qunarzz.com/vc/f5/10/9c/b647d3ee724a720ce0fa6101f0.jpg'
+      }, {
+        id: '0002',
+        imgurl: '//img1.qunarzz.com/vc/f5/10/9c/b647d3ee724a720ce0fa6101f0.jpg'
+      }]
     }
   }
 }
@@ -29,6 +36,7 @@ export default {
 .wraper >>> .swiper-pagination-bullet-active {
   background-color: red !important;
 }
+
 .Swiperimg {
   width: 100%;
   height: 200px;
