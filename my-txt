@@ -27,3 +27,33 @@ color: $bgcolor;
   overflow: hidden;
   padding-bottom: 31.25%;
 }
+
+发送ajax请求  用axios
+axios很强大  
+在浏览器上  可以发送 xhr请求  
+在node.js上 可以发送http请求
+
+
+axios部分：
+1.安装下载axios
+2.写请求的步骤
+3.静态的资源都在static里面 因为只有static里的资源才能被外部访问
+在地址栏输入地址 就可以被访问 
+4.模拟数据 都放在static中的mock中  我们并不希望把它放在线上 
+5.在用axios请求数据时  不能直接写地址 
+要用 axios.get('/api/index.json')
+然后在config的index.js中配置 
+ proxyTable:{
+  '/api':{
+     target: 'http//localhost:8080',
+     pathRewrite: {
+       '^/api' : '/static/mock'
+     }
+  }
+ }
+
+当检测到以api开头时 就自动转换到 /static/mock/目录下查找  
+这个功能不是vue提供的  但是webpack提供的
+
+改完配置项文件 就要重启服务器 
+

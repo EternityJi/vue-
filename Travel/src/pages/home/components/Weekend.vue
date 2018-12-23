@@ -59,7 +59,6 @@ export default {
   background: #eee;
   text-indent: 0.2rem;
 }
-
 .item {
   overflow: hidden;
   line-height: 0.8rem;
