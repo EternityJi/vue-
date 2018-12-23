@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">热销推荐</div>
+    <div class="title">周末去哪</div>
     <ul>
       <li class="item"
           v-for="item in recommendList"
@@ -14,7 +14,6 @@
         <div class="item-info">
           <div class="item-title">{{ item.title }}</div>
           <div class="iten-desc">{{ item.desc }} </div>
-          <button class="item-button">查看详情</button>
         </div>
       </li>
     </ul>
@@ -54,36 +53,47 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl';
 
-.title
-    margin-top: .2rem
-    line-height: .8rem
-    background: #eee
-    text-indent: .2rem
-  .item
-    overflow: hidden
-    display: flex
-    height: 1.9rem
-    .item-img
-      width: 1.7rem
-      height: 1.7rem
-      padding: .1rem
-    .item-info
-      flex: 1
-      padding: .1rem
-      min-width: 0
-      .item-title
-        line-height: .54rem
-        font-size: .32rem
-        ellipsis()
-      .item-desc
-        line-height: .4rem
-        color: #ccc
-        ellipsis()
-      .item-button
-        line-height: .44rem
-        margin-top: .16rem
-        background: #ff9300
-        padding: 0 .2rem
-        border-radius: .06rem
-        color: #fff
+.title {
+  margin-top: 0.2rem;
+  line-height: 0.8rem;
+  background: #eee;
+  text-indent: 0.2rem;
+}
+
+.item {
+  overflow: hidden;
+  line-height: 0.8rem;
+
+  .item-img {
+    display: block;
+    width: 100%;
+    height: 2.6rem;
+    padding: 0.1rem;
+  }
+
+  .item-info {
+    padding: 0.1rem;
+    .item-title {
+      line-height: 0.54rem;
+      font-size: 0.32rem;
+      font-weight: 700;
+      ellipsis();
+    }
+
+    .item-desc {
+      line-height: 0.4rem;
+      color: #ccc;
+      ellipsis();
+    }
+
+    .item-button {
+      line-height: 0.44rem;
+      margin-top: 0.16rem;
+      background: #ff9300;
+      padding: 0 0.2rem;
+      border-radius: 0.06rem;
+      color: #fff;
+    }
+  }
+}
 </style>
