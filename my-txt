@@ -57,3 +57,34 @@ axios部分：
 
 改完配置项文件 就要重启服务器 
 
+index-component-axios:
+1.data () {
+    return {
+      city: '';
+    }
+}
+
+
+
+
+列表详情页:
+router配置部分:
+<router-link>实际上是加了一个a标签
+//路由入口 在
+<router-link to="/home"></router-link>
+<router-link to="/login"></router-link>
+
+
+//index.js中 (路由配置)
+export default new Router ({
+  routes:[
+    {
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/login'
+      component: Login
+    }
+  ]
+})

@@ -3,7 +3,7 @@
     <div class="title">周末去哪</div>
     <ul>
       <li class="item"
-          v-for="item in recommendList"
+          v-for="item in list"
           :key="item.id"
           border-bottom>
         <div class="item-img-wrapper">
@@ -22,32 +22,10 @@
 <script>
 
 export default {
-  name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://dimg05.c-ctrip.com/images/200p0m000000dglxk6C77_C_228_132.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战 '
-      }, {
-        id: '0002',
-        imgUrl: 'https://dimg05.c-ctrip.com/images/200p0m000000dglxk6C77_C_228_132.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战 '
-      }, {
-        id: '0003',
-        imgUrl: 'https://dimg05.c-ctrip.com/images/200p0m000000dglxk6C77_C_228_132.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战 '
-      }, {
-        id: '0004',
-        imgUrl: 'https://dimg05.c-ctrip.com/images/200p0m000000dglxk6C77_C_228_132.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首战 '
-      }]
-    }
-  }
+  props: {
+    list: Array
+  },
+  name: 'HomeRecommend'
 }
 </script>
 <style lang="stylus" scoped>

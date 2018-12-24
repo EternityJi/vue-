@@ -1,18 +1,18 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <!-- slides -->
-      <swiper-slide v-for="( page,index ) of pages"
-                    :key="index" >
-      <div class="icon"
-           v-for="item in page"
-           :key="item.id">
-        <div class="icon-img">
-          <img class="icon-img-content"
-               :src="item.imgUrl" />
+      <swiper-slide v-for="(list,index ) of pages"
+                    :key="index">
+        <div class="icon"
+             v-for="item in list"
+             :key="item.id">
+          <div class="icon-img">
+            <img class="icon-img-content"
+                 :src="item.imgUrl" />
+          </div>
+          <p class="icon-desc">{{ item.desc }}</p>
         </div>
-        <p class="icon-desc" >{{ item.desc }}</p>
-      </div>
       </swiper-slide>
     </swiper>
   </div>
@@ -20,50 +20,15 @@
 
 <script>
 export default {
+  name: 'HomeSwisper',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      list: [
-        {
-          id: '0001',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '景点门票景点门票景点门票景点门票景点门票'
-        }, {
-          id: '0002',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '滑雪季'
-        }, {
-          id: '0003',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '泡温泉'
-        }, {
-          id: '0004',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '动植物园'
-        }, {
-          id: '0005',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '动植物园'
-
-        }, {
-          id: '0006',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '动植物园'
-
-        }, {
-          id: '0007',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '动植物园'
-
-        }, {
-          id: '0008',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '动植物园'
-        }, {
-          id: '0009',
-          imgUrl: 'https://s.qunarzz.com/homestatic/app/qunar.png',
-          desc: '动植物园'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
@@ -88,9 +53,11 @@ export default {
 .icons >>> .swiper-container {
   height: 0;
   padding-bottom: 50%;
-  .icons{
-   margin-top: .1rem
+
+  .icons {
+    margin-top: 0.1rem;
   }
+
   .icon {
     position: relative;
     overflow: hidden;
@@ -126,9 +93,8 @@ export default {
       text-align: center;
       overflow: hidden;
       white-space: nowrap;
-      text-overflow :ellipsis;
+      text-overflow: ellipsis;
     }
   }
 }
-
 </style>
