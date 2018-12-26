@@ -65,6 +65,10 @@ index-component-axios:
 }
 
 
+city-list:
+better-scroll: 是scroll的一个封装
+登录github  然后搜索 better-scroll
+安装: npm i better-scroll --save
 
 
 列表详情页:
